@@ -1,0 +1,66 @@
+
+class Result {
+
+
+
+
+    public static int sum(List<Integer> myList){
+        int sum =0;
+        for(Integer i : myList){
+            
+            sum= sum+ i;
+        }
+        return sum;
+    }
+    
+    
+    public static int equalStacks(List<Integer> h1, List<Integer> h2, List<Integer> h3) {
+    int maxHeightOfStack=0;
+    int sum1=0,sum2=0,sum3=0;
+      
+    sum1=sum(h1);
+    sum2=sum(h2);
+    sum3=sum(h3);
+    
+int max=sum1;
+
+while(true){
+if(sum1>sum2){
+    if(sum1>sum3){
+        max=sum1;
+    }
+    
+}
+else {
+    
+    if(sum2>sum3){
+        max=sum2;
+    }
+     else 
+            {
+                max=sum3;
+                }
+}
+
+    if(sum1==sum2 && sum2==sum3 ){
+        return sum(h1);
+    }
+   else if(max== sum2){
+       sum2 = sum2-h2.get(0);
+        h2.remove(0);
+    }
+    else if(max==sum3){
+          sum3 = sum3-h3.get(0);
+       h3.remove(0);
+    }
+    else {
+          sum1 = sum1-h1.get(0);
+     h1.remove(0);
+    }
+    
+  }
+  
+ // return maxHeightOfStack;
+    }
+
+}
